@@ -2,7 +2,7 @@
 title: Posts
 ---
 
-## ali@pwnworld:/posts$
+## null@nothing:/posts $
 
 <ul>
     {% for post in site.posts %}
