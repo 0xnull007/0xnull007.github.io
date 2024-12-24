@@ -104,7 +104,7 @@ print("Regenerated Hash:", hash)
 
 Here is the my generated hash and you can verify this by comparing this by the original hash from the `/etc/shadow` file's entry.
 
-![[/assets/images/posts/2024-12-25-Demystifying-User-Authentication-in-Linux/hash.png]]
+![hash.png](/assets/images/posts/2024-12-25-Demystifying-User-Authentication-in-Linux/hash.png)
 
 💡 You can specify the hashing algorithm while changing a user's password using `chpasswd` utility from `whois` package. Read man page of `chpasswd` for all available algorithms.
 
