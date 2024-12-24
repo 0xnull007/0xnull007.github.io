@@ -115,10 +115,10 @@ echo "<username>:<password>" | sudo chpasswd -c SHA512
 
 ## References
 
-- https://www.bell-labs.com/usr/dmr/www/passwd.ps
-- https://0x7e1.bsidesljubljana.si/yescrypt-large-scale-password-hashing-alexander-peslyak/
-- https://www.computernetworkingnotes.com/linux-tutorials/etc-shadow-file-in-linux-explained-with-examples.html
-- https://www.cyberciti.biz/faq/understanding-etcshadow-file/
-- https://mangolassi.it/topic/8057/unix-the-etc-shadow-file-in-depth
-- https://unix.stackexchange.com/questions/542989/when-did-unix-stop-storing-passwords-in-clear-text
-- https://www.openwall.com/yescrypt/
+- ![https://www.bell-labs.com/usr/dmr/www/passwd.ps](https://www.bell-labs.com/usr/dmr/www/passwd.ps)
+- ![https://0x7e1.bsidesljubljana.si/yescrypt-large-scale-password-hashing-alexander-peslyak/](https://0x7e1.bsidesljubljana.si/yescrypt-large-scale-password-hashing-alexander-peslyak/)
+- ![https://www.computernetworkingnotes.com/linux-tutorials/etc-shadow-file-in-linux-explained-with-examples.html](https://www.computernetworkingnotes.com/linux-tutorials/etc-shadow-file-in-linux-explained-with-examples.html)
+- ![https://www.cyberciti.biz/faq/understanding-etcshadow-file/](https://www.cyberciti.biz/faq/understanding-etcshadow-file/)
+- ![https://mangolassi.it/topic/8057/unix-the-etc-shadow-file-in-depth](https://mangolassi.it/topic/8057/unix-the-etc-shadow-file-in-depth)
+- ![https://unix.stackexchange.com/questions/542989/when-did-unix-stop-storing-passwords-in-clear-text](https://unix.stackexchange.com/questions/542989/when-did-unix-stop-storing-passwords-in-clear-text)
+- ![https://www.openwall.com/yescrypt/](https://www.openwall.com/yescrypt/)
