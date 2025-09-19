@@ -2,3 +2,4 @@
 CV/*
 !CV/*.pdf
 !CV/*.tex
+.obsidian

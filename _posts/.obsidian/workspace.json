@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test Post.md",
-                "mode": "source",
+                "file": "2025-08-26-DirtyPipe-CVE-2022-0847.md",
+                "mode": "preview",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "2025-08-26-DirtyPipe-CVE-2022-0847"
             }
           }
         ]
@@ -38,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +69,19 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "starred"
+            }
+          },
+          {
+            "id": "c0490e329919f2e1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Test Post.md",
+                "file": "2025-08-26-DirtyPipe-CVE-2022-0847.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +112,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2025-08-26-DirtyPipe-CVE-2022-0847"
             }
           },
           {
@@ -102,10 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Test Post.md",
+                "file": "2025-08-26-DirtyPipe-CVE-2022-0847.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2025-08-26-DirtyPipe-CVE-2022-0847"
             }
           },
           {
@@ -115,8 +138,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Test Post.md"
-              }
+                "file": "2025-08-26-DirtyPipe-CVE-2022-0847.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-08-26-DirtyPipe-CVE-2022-0847"
             }
           }
         ]
@@ -136,6 +168,20 @@
     "width": 300,
     "collapsed": true
   },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
   "active": "02de2ba5e5a841ec",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "2024-12-25-Demystifying-User-Authentication-in-Linux.md",
+    "2025-08-26-DirtyPipe-CVE-2022-0847.md"
+  ]
 }

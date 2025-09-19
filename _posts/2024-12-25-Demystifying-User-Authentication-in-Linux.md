@@ -5,7 +5,7 @@ tags:
   - Linux
   - /etc/passwd
   - /etc/shadow
-author: Abdul Qadir
+author: 0xnull007
 comments: true
 permalink: /posts/demystifying-user-authentication-in-linux
 description: Explored the user authentication mechanism in Linux
@@ -93,7 +93,7 @@ You can generate this stored hash by yourself (if you know the user's password) 
 import crypt
 
 # Parameters
-password = "133817"
+password = "<redacted>"
 salt = "$y$j9T$0XNlzjOIPFoBIudkyHauJ." # Includes both cost parameters and salt
 
 # Generate the Yescrypt hash
