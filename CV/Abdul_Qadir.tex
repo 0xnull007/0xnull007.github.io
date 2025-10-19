@@ -1,0 +1,335 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeResearchExp}[2]{
+\vspace{0.5mm}\item
+        \textbf{#1} 
+        {#2}
+    % \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#2}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Abdul Qadir}}\\
+    {\textit{Vulnerability Researcher \& Reverse Engineer}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    +92-309-554-4409 | \href{mailto:0xabdulqadir@gmail.com}{0xabdulqadir@gmail.com} | 
+    \href{https://0xnull007.github.io/}{0xnull007.github.io}
+    }
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+    \small{
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/0xnull007/}{0xnull007} | 
+    \socialicon{\faGithub} \href{https://github.com/0xnull007}{0xnull007} |
+    \socialicon{\faTwitter} \href{https://twitter.com/0xnull007}{0xnull007}
+    }
+\end{center}
+\vspace{-6mm}
+\begin{center}
+    \small{Lahore, Punjab - 53000, Pakistan}
+\end{center}
+\vspace{-4mm}
+
+\section{\textbf{Professional Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+\resumeSubheading
+    {Rendream [\href{https://rendream.com/}{\faIcon{globe}}]}{Lahore, Pakistan}
+    {Executive Reverse Engineer}{September 2025 -- Current}
+    \resumeItemListStart
+      \item Automated product execution at Chrome OS boot on the Chromebook, overcoming restrictive platform constraints by architecting a secure, reliable startup integration across device models.
+      \item Explored the Bluetooth Low Energy (BLE) communication protocol used by AirPods.  
+      \item Leading the exploration of wired iPhone–MacBook communication protocols to enumerate device interfaces and safely extract device information over USB, producing tools and formal reports.
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Ebryx (Pvt.) Ltd. [\href{https://www.ebryx.com}{\faIcon{globe}}]}{Lahore, Pakistan}
+    {Malware Researcher}{Apr 2024 -- Sep 2025}
+    \resumeItemListStart
+      \item Conducted reverse engineering of malware families (LockBit, BlackBasta, ScarletEel), analyzing persistence mechanisms, cryptographic implementations (ChaCha20, RSA, etc.), and evasion techniques to extract functionality and generate threat intelligence.
+      \item Performed pentesting of enterprise products (ZTNA, VPNs, etc.), reviewing authentication, access control, and protocol implementations to identify weaknesses and improve overall system resilience.
+      \item Researched and weaponized Linux kernel n-day vulnerabilities, carrying out exploit analysis, proof-of-concept development, and mitigation validation to strengthen OS-level security.
+      \item Reversed and analyzed mobile and desktop applications using static and dynamic methods; applied runtime instrumentation (Frida, Magisk) for SSL pinning bypass, encryption validation, and tampering detection.
+      \item Utilized program analysis and debugging tools (IDA Pro, Ghidra, Radare2, GDB, WinDbg) to dissect binaries across architectures (x86, x64), identifying code functionality and undocumented behaviors.
+      \item Conducted adversary simulations with Havoc and Sliver, developing custom loaders and droppers to test endpoint defenses and evaluate incident response effectiveness.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {University of the Punjab [\href{https://www.pu.edu.pk}{\faIcon{globe}}]}{Lahore, Pakistan}
+    {Teaching Assistant}{Jan 2023 -- Jul 2024}
+    \resumeItemListStart
+      \item Designed and delivered lab coursework for OOP, DSA, and Operating Systems courses.
+      \item Created and graded lab examinations, ensuring alignment with course objectives.
+      \item Assisted students in lab sessions and handled other TA responsibilities.
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+  
+\vspace{-6mm}
+\section{\textbf{Research Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeResearchExp
+  {Linux Kernel \& Userland Vulnerability Research (n-day Exploits)}{}
+{
+\resumeItemListStart
+  \item Analyzed and reproduced critical Linux kernel vulnerabilities including \textbf{Dirty Pipe (CVE-2022-0847)} and \textbf{Dirty COW (CVE-2016-5195)}, focusing on memory management, page cache, and race conditions enabling privilege escalation.  
+  \item Built custom kernel environments in QEMU with GDB (gef) to trace vulnerable code paths, study memory write primitives, and confirm local root escalation through working PoCs.  
+  \item Implemented a Proof-of-Concept for \textbf{Sudo pwfeedback (CVE-2019-18634)}, demonstrating a stack-based buffer overflow and analyzing exploitability for local privilege escalation.  
+  \item Utilized Elixir Bootlin, source-level debugging, and controlled race condition exploitation to understand vulnerability root causes and validate mitigations.  
+\resumeItemListEnd
+}
+
+
+\resumeResearchExp
+  {Vulnerability Research \& Exploit Development for Linux Kernel [\href{https://github.com/0xnull007/linux_kernel_exploitation/}{\faIcon{globe}}] }
+{
+\resumeItemListStart
+  \item Final Year Project (FYP) during Bachelor
+  \item Supervised by Dr. Muhammad Arif Butt \href{https://arifbutt.me}{(arifbutt.me)}
+  \item Started binary exploitation from Linux user-land and extended into kernel-land exploitation
+  \item Conducted n-day research on CVE-2022-0185 (Linux Kernel fscontext buffer overflow vulnerability)
+\resumeItemListEnd
+}
+
+\resumeProject
+  {Linux eBPF-based Modular Firewall
+  [\href{https://github.com/0xnull007/EBPF-Firewall}{\faIcon{globe}}] 
+  }
+  {Tools: C, bash}
+  {}
+  {}
+\resumeItemListStart
+  \item Built a high-performance firewall using eBPF with XDP and TC hooks, enabling real-time packet filtering, rate limiting, and protocol/IP/port-based controls.
+  \item Implemented dynamic rule management through user-space utilities with pinned BPF maps for persistence.
+\resumeItemListEnd
+
+
+\vspace{-7mm}
+\resumeSubHeadingListEnd
+
+\section{\textbf{Skills}}
+\vspace{-0.4mm}
+ \resumeHeadingSkillStart
+  \resumeItem{Programming: }
+    {C/C++, Assembly (x86-64/ARM), Bash, Python, Java, JavaScript}
+  \resumeItem{Information Security: }
+    {Vulnerability Research \& Exploit Development, Incident Detection \& Response, Secure Development Practices}
+  \resumeItem{Networks: }
+    {Firewalls, Routers, Switches, TCP/IP, VPNs, Network Security Architecture, Network Traffic Analysis (Wireshark, nftables)}
+  \resumeItem{Cryptography: }
+    {Symmetric \& Asymmetric Encryption (ChaCha20, AES, RSA), Hashing Algorithms (SHA, MD5), Key Management, Secure Protocols \& Communication Analysis}
+  \resumeItem{Tools: }
+    {QEMU/KVM, VMWare Workstation, IDA Pro, Ghidra, Radare2, GDB with GEF, AFL++, Syzkaller, CodeQL, Frida, Objection, Wireshark, Kali Toolchain, FlareVM Toolchain}
+  \resumeItem{Operating Systems: }
+    {Linux Kernel (Ubuntu, Debian), Windows (WSL), Android}
+  \resumeItem{Research \& CTF Skills: }
+    {Binary Exploitation, Reverse Engineering, Kernel Exploitation, Web Exploitation, Memory Corruption Analysis, Challenge Development}
+ \resumeHeadingSkillEnd
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{PUCIT, University of the Punjab}{Lahore, Pakistan}
+{Bachelor of Computer Science}{Dec 2020 - July 2024}
+\resumeItemListStart
+\item GPA: 3.05/4.00
+\item Cyber-security lead at Google Developer Student Clubs at PUCIT
+\item Mentor and CTF challenge author at PUCon24 \& PUCon25 (National Tech Event by University of the Punjab) [\href{https://pucon.vercel.app/}{\faIcon{globe}}]
+\item Lead at Cyber@PU - Unofficial PUCIT Cyber Security Community
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{University Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Hotel Management System}
+  {Tools: JavaScript, Node.js, MySQL}
+  {}
+  {{}[\href{https://github.com/0xnull007/Hotel-managemant-System}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Developed a full-stack web application with an admin panel for hotel services including room booking and employee management.
+  \item Led the project team, implementing backend logic in Node.js with MySQL for data persistence.
+\resumeItemListEnd
+
+\resumeProject
+  {Web Engineering Course Material}
+  {Tools: Java, Servlets, JSP, MySQL, Batch Scripts}
+  {{}[\href{https://github.com/0xnull007/demo}{\textcolor{darkblue}{\faGithub}}]}
+  {{}[\href{https://github.com/0xnull007/Web-Engineering}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Solved labs covering client-side and server-side programming, session handling, authentication, and database connectivity using Java Servlets and JSP.
+  \item Automated the entire build and execution process using batch scripts to replace IDE usage and streamline development.
+\resumeItemListEnd
+
+\resumeProject
+  {Network Programming in Linux}
+  {Tools: C, Linux Sockets, TCP/IP}
+  {}
+  {{}[\href{https://github.com/0xnull007/network_programming}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Implemented socket programming concepts in C, including TCP/UDP communication, client-server architecture, and concurrent connections in Linux.
+  \item Explored low-level system calls to deepen understanding of network protocols and inter-process communication.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\end{document}
