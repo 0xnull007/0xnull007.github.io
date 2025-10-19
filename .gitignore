@@ -2,5 +2,5 @@
 CV/*
 !CV/*.pdf
 !CV/*.tex
-.obsidian
-.DS_Store
+.obsidian/
+.DS_Store/
